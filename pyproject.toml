@@ -1,0 +1,38 @@
+[project]
+name = "pyfalkordb"
+version = "0.1.0"
+description = "Python client for interacting with a FalkorDB graph database."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "redis>=6.1.0",
+]
+authors = [
+    { name = "Wilhelm Ågren", email = "wilhelmagren98@gmail.com" },
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.9",
+]
+test = [
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "pytest-cov>=6.1.1",
+]
+
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["I", "F", "E", "W", "B", "ANN"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"test_*.py" = ["ANN"]
+
+[tool.ruff.format]
+quote-style = "single"
